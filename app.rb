@@ -2,6 +2,8 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
 
+Dir['app/**/*.rb'].each { |file| require_relative file }
+
 configure :development, :test do
   require 'pry'
 end
